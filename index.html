@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoções Amazon - Celulares Usados como Novos</title>
+    
+    <meta name="description" content="Receba alertas de celulares 'Usados como Novos' com garantia Amazon. Monitoramento 24h em tempo real.">
+    <meta property="og:title" content="Bot de Ofertas Amazon - Celulares">
+    <meta property="og:description" content="Até 40% de desconto em itens revisados e com garantia.">
+    
+    <style>
+        :root {
+            --amazon-orange: #FF9900;
+            --telegram-blue: #0088cc;
+            --dark-blue: #232f3e;
+            --light-gray: #f3f3f3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            max-width: 450px;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .header {
+            background-color: var(--dark-blue);
+            padding: 30px 20px;
+            color: white;
+        }
+
+        .header img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        h1 span {
+            color: var(--amazon-orange);
+        }
+
+        p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .features {
+            text-align: left;
+            margin-bottom: 30px;
+            background: #fff9f0;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--amazon-orange);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .feature-item:last-child { margin-bottom: 0; }
+        
+        .icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .btn-telegram {
+            background-color: var(--telegram-blue);
+            color: white;
+            display: block;
+            padding: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+        }
+
+        .btn-telegram:hover {
+            transform: scale(1.02);
+            background-color: #0077b3;
+        }
+
+        .footer {
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #999;
+            background: #fafafa;
+        }
+
+        /* Animação simples de pulso no botão */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 136, 204, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0); }
+        }
+        .btn-telegram {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div style="font-size: 3rem;">📦</div>
+            <h2>Amazon Outlet Bot</h2>
+        </div>
+
+        <div class="content">
+            <h1>Celulares com até <span>40% de Desconto</span></h1>
+            <p>Nosso bot monitora o estoque da Amazon 24h por dia e avisa você no momento exato que um item entra em oferta.</p>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <span class="icon">✅</span> Itens Usados como Novos
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🛡️</span> Com Garantia Amazon & Revisados
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🚀</span> Alertas em Tempo Real
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🚫</span> Sem Spam, apenas promoções
+                </div>
+            </div>
+
+            <a href="https://t.me/amazonquasenovo" id="telegram-link" class="btn-telegram">
+                ENTRAR NO GRUPO VIP
+            </a>
+        </div>
+
+        <div class="footer">
+            Ideal para quem busca iPhones e Androids de alta linha pelo melhor preço do mercado.
+        </div>
+    </div>
+
+    <script>
+        // Lógica de Deep Linking para facilitar a entrada no Telegram
+        document.getElementById('telegram-link').addEventListener('click', function(e) {
+            const telegramUrl = "https://t.me/amazonquasenovo";
+            const telegramAppUri = "tg://resolve?domain=amazonquasenovo";
+            
+            // Tenta abrir o protocolo direto do app
+            const start = new Date().getTime();
+            window.location.href = telegramAppUri;
+
+            // Se após 500ms o app não abrir (o JS continuará rodando), redireciona para a URL web
+            setTimeout(function() {
+                const now = new Date().getTime();
+                if (now - start < 1000) {
+                    window.location.href = telegramUrl;
+                }
+            }, 500);
+
+            e.preventDefault();
+        });
+    </script>
+
+</body>
+</html>
