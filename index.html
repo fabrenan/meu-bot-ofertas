@@ -8,187 +8,165 @@
     <meta name="description" content="Receba alertas de celulares 'Usados como Novos' com garantia Amazon. Monitoramento 24h em tempo real via Telegram.">
     <meta property="og:title" content="Bot de Ofertas Amazon - Celulares">
     <meta property="og:description" content="Até 40% de desconto em itens revisados e com garantia.">
-    
-    <style>
-        :root {
-            --amazon-orange: #FF9900;
-            --telegram-blue: #0088cc;
-            --dark-blue: #232f3e;
-            --light-gray: #f3f3f3;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--light-gray);
-            color: var(--dark-blue);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .badge {
-            background-color: var(--amazon-orange);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--dark-blue);
-        }
-
-        p.subtitle {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        .features {
-            text-align: left;
-            margin-bottom: 35px;
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            font-size: 1rem;
-        }
-
-        .feature-item .icon {
-            margin-right: 12px;
-            font-size: 1.2rem;
-        }
-
-        .btn-telegram {
-            display: block;
-            background-color: var(--telegram-blue);
-            color: white;
-            text-decoration: none;
-            padding: 18px 30px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
-        }
-
-        .btn-telegram:hover {
-            background-color: #0077b5;
-            transform: translateY(-2px);
-        }
-
-        .how-it-works {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .footer {
-            margin-top: 30px;
-            font-size: 0.8rem;
-            color: #888;
-            text-align: center;
-        }
-
-        .footer a {
-            color: #888;
-            margin: 0 10px;
-        }
-
-        /* Estilização para Mobile */
-        @media (max-width: 480px) {
-            .container { margin: 10px; padding: 10px; }
-            .card { padding: 25px 15px; }
-            h1 { font-size: 1.5rem; }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+        <!-- Google Ads (gtag) - substitua AW-XXXXXXX e label pelo seu ID/label -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);} 
+            gtag('js', new Date());
+            gtag('config', 'AW-XXXXXXX');
+            // Config global para evento de conversão nos cliques de CTA
+            window.__GADS_SEND_TO = 'AW-XXXXXXX/CONVERSION_LABEL';
+        </script>
 </head>
 <body>
 
-    <div class="container">
-        <div class="card">
-            <span class="badge">Monitoramento 24h</span>
-            <h1>Celulares "Quase Novos" com Preço de Usado</h1>
-            <p class="subtitle">Garanta iPhones e Androids com até 40% de desconto e garantia Amazon diretamente no seu celular.</p>
-
-            <div class="features">
-                <div class="feature-item">
-                    <span class="icon">🚀</span> <strong>Alertas Instantâneos:</strong> Não perca o estoque.
-                </div>
-                <div class="feature-item">
-                    <span class="icon">🛡️</span> <strong>Segurança:</strong> Apenas links da Amazon oficial.
-                </div>
-                <div class="feature-item">
-                    <span class="icon">🔍</span> <strong>Curadoria:</strong> Selecionamos apenas os melhores estados.
-                </div>
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="brand">
+                <span class="brand-logo" aria-hidden="true">🔔</span>
+                <span class="brand-title">Amazon Quase Novo • Alertas</span>
             </div>
-
-            <a href="https://t.me/amazonquasenovo" id="telegram-link" class="btn-telegram">
-                ENTRAR NO GRUPO GRATUITO
-            </a>
-
-            <div class="how-it-works">
-                <p><strong>Como funciona?</strong> Nosso bot varre o estoque da Amazon a cada minuto. Assim que um item "Como Novo" ou "Muito Bom" entra no sistema, você recebe o link no Telegram.</p>
-            </div>
+            <a href="https://t.me/amazonquasenovo" class="cta-secondary telegram-cta">Entrar no grupo</a>
         </div>
+    </header>
 
-        <div class="footer">
-            <p>© 2025 Monitor de Ofertas - Independente de Amazon.com.br</p>
-            <div style="margin-top: 10px;">
-                <a href="#">Privacidade</a> | <a href="#">Termos</a>
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="hero-badge">Monitoramento 24h • Ofertas verificadas</span>
+                <h1>Garimpo de celulares “Quase Novos” com preços imperdíveis</h1>
+                <p class="hero-sub">Receba no Telegram links oficiais da Amazon com iPhones e Androids revisados, garantia e até 40% de desconto. Chegou, você compra. Simples assim.</p>
+
+                <div class="hero-actions">
+                    <a href="https://t.me/amazonquasenovo" class="cta-primary telegram-cta" aria-label="Ver ofertas no Telegram">Ver ofertas no Telegram →</a>
+                    <p class="cta-note">Sem spam • Links oficiais • Saída a qualquer momento</p>
+                </div>
+
+                <ul class="trust-list" aria-label="Benefícios">
+                    <li>🛡️ Garantia e nota fiscal Amazon</li>
+                    <li>⚡️ Alertas em tempo real</li>
+                    <li>🔗 Links 100% oficiais</li>
+                </ul>
             </div>
-        </div>
+        </section>
+
+        <section class="section section-deals">
+            <div class="container">
+                <h2 class="section-title">Entradas recentes no estoque</h2>
+                <div class="deal-grid" aria-live="polite">
+                    <article class="deal-card">
+                        <span class="deal-chip like-new">Como Novo</span>
+                        <img src="img/M15_amazon_quase_novo.jpg" alt="Samsung M15 em condição como novo" loading="lazy">
+                        <div class="deal-body">
+                            <strong>Samsung M15</strong>
+                            <p class="deal-text">Revisado e pronto para uso. Preços variam conforme o lote.</p>
+                        </div>
+                    </article>
+                    <article class="deal-card">
+                        <span class="deal-chip very-good">Muito Bom</span>
+                        <img src="img/S24_amazon_por_2458.jpg" alt="Samsung S24 em condição muito bom" loading="lazy">
+                        <div class="deal-body">
+                            <strong>Samsung S24</strong>
+                            <p class="deal-text">Inspecionado, com nota fiscal. Estoque muda rápido ao longo do dia.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="section-actions">
+                    <a href="https://t.me/amazonquasenovo" class="cta-primary telegram-cta">Receber alertas agora</a>
+                </div>
+                <p class="section-note">Imagens ilustrativas. Disponibilidades e preços são dinâmicos. Os links enviados apontam para páginas oficiais da Amazon.</p>
+            </div>
+        </section>
+
+        <section class="section section-how">
+            <div class="container">
+                <h2 class="section-title">Como funciona</h2>
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-icon" aria-hidden="true">🔎</span>
+                        <div>
+                            <strong>Varrimento contínuo</strong>
+                            <p>Monitoramos páginas de “Usados como Novos” da Amazon 24h.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-icon" aria-hidden="true">⏱️</span>
+                        <div>
+                            <strong>Detecção instantânea</strong>
+                            <p>Achou lote elegível? Enviamos o link no mesmo minuto.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-icon" aria-hidden="true">📲</span>
+                        <div>
+                            <strong>Compra segura</strong>
+                            <p>Você acessa a página oficial da Amazon com garantia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-faq">
+            <div class="container">
+                <h2 class="section-title">Perguntas rápidas</h2>
+                <details class="faq-item">
+                    <summary>O que é “Quase Novo” na Amazon?</summary>
+                    <p>Produtos devolvidos e revisados pela Amazon, com garantia e nota fiscal. Muitos parecem novos, com pequenos sinais de uso.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Preciso pagar para entrar no grupo?</summary>
+                    <p>Não. O grupo é gratuito e você pode sair quando quiser.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Como evito links suspeitos?</summary>
+                    <p>Enviamos apenas URLs oficiais da Amazon. Sem encurtadores, sem redirecionamentos estranhos.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Qual a diferença entre “Como Novo” e “Muito Bom”?</summary>
+                    <p>“Como Novo” geralmente indica aparência próxima a nova, com mínimos sinais de uso. “Muito Bom” pode apresentar marcas leves, sem afetar funcionalidade. Ambos são testados e possuem garantia Amazon.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>É confiável comprar produtos “Quase Novos”?</summary>
+                    <p>Sim. Os itens são verificados pela Amazon e acompanham nota fiscal e política de devolução. Leia a página do produto para entender as condições e cobertura de garantia.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Por que as ofertas esgotam rápido?</summary>
+                    <p>Estoque é limitado e rotativo. Quando um lote entra, muitos usuários recebem o alerta ao mesmo tempo. Agir rápido aumenta suas chances.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Posso desativar notificações no Telegram?</summary>
+                    <p>Sim. No app do Telegram, ajuste as preferências do grupo ou silencie. Você também pode sair do grupo a qualquer momento.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Vocês são afiliados da Amazon?</summary>
+                    <p>Sim. Participamos do Programa de Associados da Amazon e podemos receber comissão por compras qualificadas originadas dos nossos links. Isso não altera o preço para você.</p>
+                </details>
+                <div class="section-actions">
+                    <a href="https://t.me/amazonquasenovo" class="cta-primary telegram-cta">Ver ofertas no Telegram</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="sticky-cta" role="navigation" aria-label="Ação rápida">
+        <a href="https://t.me/amazonquasenovo" class="cta-primary telegram-cta">ENTRAR NO GRUPO</a>
     </div>
 
-    <script>
-        // Lógica de Deep Linking para facilitar a entrada no Telegram
-        document.getElementById('telegram-link').addEventListener('click', function(e) {
-            const telegramUrl = "https://t.me/amazonquasenovo";
-            const telegramAppUri = "tg://resolve?domain=amazonquasenovo";
-            
-            const start = new Date().getTime();
-            window.location.href = telegramAppUri;
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Monitor de Ofertas — Participante do Programa de Associados da Amazon.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacidade</a> · <a href="terms.html">Termos</a>
+            </div>
+        </div>
+    </footer>
 
-            setTimeout(function() {
-                const now = new Date().getTime();
-                if (now - start < 1000) {
-                    window.location.href = telegramUrl;
-                }
-            }, 500);
+    <script src="app.js" defer></script>
 
-            e.preventDefault();
-        });
-    </script>
-
-</body>
-</html>
+ </body>
+ </html>
